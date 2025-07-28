@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Freecash Surveys USA - Turn Opinions into Rewards</title>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+       --primary: #1d8cf8;
+       --secondary: #6c5ce7;
+       --accent: #00d69f;
+       --bg: #f7f9fc;
+       --dark: #1f2937;
+    }
+    * {box-sizing: border-box; margin: 0; padding: 0;}
+    body {
+       font-family: 'Inter', sans-serif;
+       line-height: 1.6;
+       color: var(--dark);
+       background: var(--bg);
+    }
+    header {
+       background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+       color: #fff;
+       padding: 20px 40px;
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       position: sticky;
+       top: 0;
+       z-index: 10;
+       box-shadow: 0 2px 4px rgba(0,0,0,.1);
+    }
+    .logo {
+       font-size: 1.8rem;
+       font-weight: 700;
+    }
+    nav a {
+       color: #fff;
+       margin-left: 20px;
+       text-decoration: none;
+       font-weight: 600;
+       transition: opacity .3s ease;
+    }
+    nav a:hover {
+       opacity: 0.8;
+    }
+    .hero {
+       display: flex;
+       flex-wrap: wrap;
+       align-items: center;
+       justify-content: center;
+       padding: 80px 20px 60px;
+       background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+       color: #fff;
+       text-align: left;
+       overflow: hidden;
+       position: relative;
+    }
+    .hero-content {
+       flex: 1;
+       min-width: 300px;
+       z-index: 2;
+       max-width: 600px;
+    }
+    .hero h1 {
+       font-size: 2.5rem;
+       font-weight: 700;
+       margin-bottom: 20px;
+       line-height: 1.2;
+    }
+    .hero p {
+       font-size: 1.1rem;
+       margin-bottom: 30px;
+    }
+    .btn {
+       display: inline-block;
+       background: var(--accent);
+       color: #fff;
+       padding: 15px 30px;
+       border-radius: 50px;
+       text-decoration: none;
+       font-weight: 700;
+       box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+       transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .btn:hover {
+       transform: translateY(-3px);
+       box-shadow: 0 12px 24px rgba(0,0,0,.25);
+    }
+    .hero-image {
+       flex: 1;
+       min-width: 300px;
+       position: relative;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       perspective: 1000px;
+    }
+    .hero-image img {
+       width: 80%;
+       max-width: 450px;
+       border-radius: 20px;
+       transform-style: preserve-3d;
+       animation: float 8s infinite ease-in-out;
+    }
+    @keyframes float {
+       0% { transform: rotateY(0deg) rotateX(0deg); }
+       25% { transform: rotateY(15deg) rotateX(-5deg); }
+       50% { transform: rotateY(-15deg) rotateX(5deg); }
+       75% { transform: rotateY(10deg) rotateX(-2deg); }
+       100% { transform: rotateY(0deg) rotateX(0deg); }
+    }
+    section {
+       padding: 60px 20px;
+    }
+    .features {
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: center;
+       gap: 20px;
+       max-width: 1000px;
+       margin: 0 auto;
+    }
+    .feature-card {
+       background: #fff;
+       border-radius: 20px;
+       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+       padding: 30px;
+       flex: 1;
+       min-width: 280px;
+       max-width: 320px;
+       transition: transform .4s;
+       cursor: pointer;
+       perspective: 1000px;
+    }
+    .feature-card:hover {
+       transform: translateY(-10px);
+    }
+    .feature-icon {
+       font-size: 40px;
+       margin-bottom: 20px;
+       color: var(--accent);
+    }
+    .feature-card h3 {
+       font-size: 1.4rem;
+       margin-bottom: 10px;
+       font-weight: 600;
+    }
+    .feature-card p {
+       font-size: 0.95rem;
+       color: #555;
+    }
+    /* Stats Section */
+    .stats {
+       background: var(--dark);
+       color: #fff;
+       text-align: center;
+       padding: 80px 20px;
+    }
+    .stats h2 {
+       font-size: 2rem;
+       margin-bottom: 40px;
+       font-weight: 700;
+    }
+    .stat-grid {
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: center;
+       gap: 40px;
+    }
+    .stat {
+       flex: 1;
+       min-width: 200px;
+       max-width: 240px;
+       background: rgba(255,255,255,0.1);
+       padding: 30px;
+       border-radius: 15px;
+       backdrop-filter: blur(10px);
+       transition: transform .4s;
+    }
+    .stat:hover {
+       transform: translateY(-8px);
+    }
+    .stat-number {
+       font-size: 2rem;
+       font-weight: 700;
+       color: var(--accent);
+       margin-bottom: 10px;
+    }
+    .stat-label {
+       font-size: 1rem;
+    }
+    /* Testimonials */
+    .testimonials-section {
+       background: var(--bg);
+       text-align: center;
+    }
+    .testimonials-section h2 {
+       font-size: 2rem;
+       margin-bottom: 30px;
+    }
+    .testimonials {
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: center;
+       gap: 30px;
+    }
+    .testimonial-card {
+       width: 300px;
+       height: 200px;
+       perspective: 1000px;
+       margin-bottom: 20px;
+    }
+    .testimonial-inner {
+       position: relative;
+       width: 100%;
+       height: 100%;
+       text-align: center;
+       transition: transform 0.8s;
+       transform-style: preserve-3d;
+    }
+    .testimonial-card:hover .testimonial-inner {
+       transform: rotateY(180deg);
+    }
+    .testimonial-front, .testimonial-back {
+       position: absolute;
+       width: 100%;
+       height: 100%;
+       backface-visibility: hidden;
+       border-radius: 15px;
+       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       padding: 20px;
+       background: #fff;
+    }
+    .testimonial-back {
+       transform: rotateY(180deg);
+       background: var(--accent);
+       color: #fff;
+    }
+    .testimonial-front img {
+       width: 60px;
+       height: 60px;
+       border-radius: 50%;
+       margin-bottom: 15px;
+       object-fit: cover;
+    }
+    .stars {
+       color: #fbbf24; /* amber color for stars */
+       margin-bottom: 10px;
+       font-size: 1.1rem;
+    }
+    .testimonial-back p {
+       font-size: 0.9rem;
+    }
+    /* CTA Section */
+    .cta {
+       background: linear-gradient(135deg, var(--primary), var(--secondary));
+       color: #fff;
+       text-align: center;
+       padding: 80px 20px;
+    }
+    .cta h2 {
+       font-size: 2.2rem;
+       margin-bottom: 20px;
+    }
+    .cta p {
+       font-size: 1.1rem;
+       margin-bottom: 30px;
+       max-width: 600px;
+       margin-left: auto;
+       margin-right: auto;
+    }
+    .cta form {
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: center;
+       gap: 10px;
+    }
+    .cta input[type='email'] {
+       padding: 15px;
+       border: none;
+       border-radius: 30px;
+       width: 300px;
+       max-width: 100%;
+       outline: none;
+    }
+    .cta button {
+       padding: 15px 30px;
+       border: none;
+       border-radius: 30px;
+       background: var(--accent);
+       color: #fff;
+       font-weight: 700;
+       cursor: pointer;
+       transition: transform .3s ease, box-shadow .3s;
+       box-shadow: 0 8px 20px rgba(0,0,0,.2);
+    }
+    .cta button:hover {
+       transform: translateY(-3px);
+       box-shadow: 0 12px 24px rgba(0,0,0,.25);
+    }
+    /* Footer */
+    footer {
+       background: var(--dark);
+       color: #aaa;
+       padding: 40px 20px;
+       text-align: center;
+       font-size: 0.9rem;
+    }
+    footer a {
+       color: var(--accent);
+       text-decoration: none;
+       margin: 0 10px;
+       font-weight: 600;
+    }
+    @media (max-width: 768px) {
+       .hero {
+         flex-direction: column;
+         text-align: center;
+       }
+       .hero-content, .hero-image {
+         max-width: none;
+       }
+       .btn {
+         padding: 12px 24px;
+       }
+       .hero h1 {
+         font-size: 2rem;
+       }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Freecash Surveys</div>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#stats">Stats</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#join">Join</a>
+    </nav>
+  </header>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Ready to turn your opinions into rewards?</h1>
+      <p>Join a thriving community of survey enthusiasts and access tasks, offers, and games that reward you for sharing your views. Trusted by millions, we make earning simple and fun—no prior experience needed!</p>
+      <a href="#join" class="btn">Get Started Now</a>
+    </div>
+    <div class="hero-image">
+      <!-- Use the generated 3D illustration as the hero image -->
+      <img src="910d857e-b4a8-4491-882e-1912acb4441d.png" alt="survey illustration">
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="features">
+      <div class="feature-card">
+        <div class="feature-icon">📝</div>
+        <h3>Diverse Tasks</h3>
+        <p>Choose from surveys, app tests and game milestones. There’s always something new to explore and enjoy.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>Fast Rewards</h3>
+        <p>Redeem your points for PayPal, crypto, gift cards and more once you meet the low redemption thresholds.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔒</div>
+        <h3>Secure & Trusted</h3>
+        <p>Your data is protected with SSL encryption and identity verification. Over 11M members trust our platform.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="stats" class="stats">
+    <h2>Why join Freecash Surveys?</h2>
+    <div class="stat-grid">
+      <div class="stat">
+        <div class="stat-number" data-target="11000000">0</div>
+        <div class="stat-label">Members Worldwide</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number" data-target="35000000">0</div>
+        <div class="stat-label">Rewards Paid Out ($)</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number" data-target="4.6">0</div>
+        <div class="stat-label">Trustpilot Rating</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="testimonials-section">
+    <h2>Hear from our members</h2>
+    <div class="testimonials">
+      <div class="testimonial-card">
+        <div class="testimonial-inner">
+          <div class="testimonial-front">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User photo">
+            <div class="stars">★★★★★</div>
+            <p>“Fast payouts and fun surveys!”</p>
+          </div>
+          <div class="testimonial-back">
+            <p>“I love earning rewards during my breaks. The tasks are varied, and I feel my feedback matters.” – Sarah T., 29, Texas</p>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-inner">
+          <div class="testimonial-front">
+            <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="User photo">
+            <div class="stars">★★★★☆</div>
+            <p>“Great way to earn gift cards.”</p>
+          </div>
+          <div class="testimonial-back">
+            <p>“It’s easy to fit surveys into my day. I’ve redeemed several Amazon cards already!” – Mike R., 35, California</p>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-inner">
+          <div class="testimonial-front">
+            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="User photo">
+            <div class="stars">★★★★★</div>
+            <p>“Fun tasks & friendly support!”</p>
+          </div>
+          <div class="testimonial-back">
+            <p>“The daily streak bonuses motivate me to keep going. The platform is secure and trustworthy.” – Dana P., 22, New York</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="join" class="cta">
+    <h2>Start earning rewards today</h2>
+    <p>Sign up with your email to gain immediate access to our survey offers and start accumulating points you can redeem for gift cards, crypto and more. Earnings depend on the tasks you choose and the time you invest.</p>
+    <form onsubmit="event.preventDefault(); alert('Thank you! We will send you your access link.');">
+      <input type="email" placeholder="Enter your email" required>
+      <button type="submit">Join Free</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Freecash Surveys USA. All rights reserved.</p>
+    <p>Disclaimer: This page does not guarantee any specific earnings. Reward amounts vary based on task type and time invested, as highlighted in review data【113550908520239†L32-L37】. Freecash has paid over $35 million in rewards and holds a 4.6‑star Trustpilot rating【113550908520239†L129-L133】. The AIDA model guides our messaging, focusing on awareness, interest, desire and action【371221909092020†L104-L115】.</p>
+    <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a> | <a href="#">Contact Us</a></p>
+  </footer>
+
+  <script>
+    // Counter animation when the stats section enters the viewport
+    const counters = document.querySelectorAll('.stat-number');
+    const speed = 2000; // duration in milliseconds
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          counters.forEach(counter => {
+            const updateCount = () => {
+              const target = +counter.getAttribute('data-target');
+              let count = +counter.innerText.replace(/[^0-9.]/g, '');
+              const increment = target / (speed / 16);
+              if(count < target){
+                count += increment;
+                counter.innerText = target >= 5 ? Math.floor(count).toLocaleString() : count.toFixed(1);
+                requestAnimationFrame(updateCount);
+              } else {
+                counter.innerText = target >= 5 ? target.toLocaleString() : target.toFixed(1);
+              }
+            }
+            updateCount();
+          });
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(counter => {
+      observer.observe(counter);
+    });
+  </script>
+</body>
+</html>
