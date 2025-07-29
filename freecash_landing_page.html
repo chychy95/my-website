@@ -225,134 +225,134 @@
     .testimonials {
        display: flex;
        flex-wrap: wrap;
-       justify-content: center;
-       gap: 30px;
+       justify:center;
+       gap:30px;
     }
     .testimonial-card {
-       width: 300px;
-       height: 200px;
-       perspective: 1000px;
-       margin-bottom: 20px;
+       width:300px;
+       height:200px;
+       perspective:1000px;
+       margin-bottom:20px;
     }
     .testimonial-inner {
-       position: relative;
-       width: 100%;
-       height: 100%;
-       text-align: center;
-       transition: transform 0.8s;
-       transform-style: preserve-3d;
+       position:relative;
+       width:100%;
+       height:100%;
+       text-align:center;
+       transition:transform 0.8s;
+       transform-style:preserve-3d;
     }
     .testimonial-card:hover .testimonial-inner {
-       transform: rotateY(180deg);
+       transform:rotateY(180deg);
     }
     .testimonial-front, .testimonial-back {
-       position: absolute;
-       width: 100%;
-       height: 100%;
-       backface-visibility: hidden;
-       border-radius: 15px;
-       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-       display: flex;
-       flex-direction: column;
-       justify-content: center;
-       align-items: center;
-       padding: 20px;
-       background: #fff;
+       position:absolute;
+       width:100%;
+       height:100%;
+       backface-visibility:hidden;
+       border-radius:15px;
+       box-shadow:0 4px 12px rgba(0,0,0,0.1);
+       display:flex;
+       flex-direction:column;
+       justify-content:center;
+       align-items:center;
+       padding:20px;
+       background:#fff;
     }
     .testimonial-back {
-       transform: rotateY(180deg);
-       background: var(--accent);
-       color: #fff;
+       transform:rotateY(180deg);
+       background:var(--accent);
+       color:#fff;
     }
     .testimonial-front img {
-       width: 60px;
-       height: 60px;
-       border-radius: 50%;
-       margin-bottom: 15px;
-       object-fit: cover;
+       width:60px;
+       height:60px;
+       border-radius:50%;
+       margin-bottom:15px;
+       object-fit:cover;
     }
     .stars {
-       color: #fbbf24;
-       margin-bottom: 10px;
-       font-size: 1.1rem;
+       color:#fbbf24;
+       margin-bottom:10px;
+       font-size:1.1rem;
     }
     .testimonial-back p {
-       font-size: 0.9rem;
+       font-size:0.9rem;
     }
     /* CTA Section */
     .cta {
-       background: linear-gradient(135deg, var(--primary), var(--secondary));
-       color: #fff;
-       text-align: center;
-       padding: 80px 20px;
+       background:linear-gradient(135deg, var(--primary), var(--secondary));
+       color:#fff;
+       text-align:center;
+       padding:80px 20px;
     }
     .cta h2 {
-       font-size: 2.2rem;
-       margin-bottom: 20px;
+       font-size:2.2rem;
+       margin-bottom:20px;
     }
     .cta p {
-       font-size: 1.1rem;
-       margin-bottom: 30px;
-       max-width: 600px;
-       margin-left: auto;
-       margin-right: auto;
+       font-size:1.1rem;
+       margin-bottom:30px;
+       max-width:600px;
+       margin-left:auto;
+       margin-right:auto;
     }
     .cta form {
-       display: flex;
-       flex-wrap: wrap;
-       justify-focus: center;
-       gap: 10px;
+       display:flex;
+       flex-wrap:wrap;
+       justify-content:center;
+       gap:10px;
     }
     .cta input[type='email'] {
-       padding: 15px;
-       border: none;
-       border-radius: 30px;
-       width: 300px;
-       max-width: 100%;
-       outline: none;
+       padding:15px;
+       border:none;
+       border-radius:30px;
+       width:300px;
+       max-width:100%;
+       outline:none;
     }
     .cta button {
-       padding: 15px 30px;
-       border: none;
-       border-radius: 30px;
-       background: var(--accent);
-       color: #fff;
-       font-weight: 700;
-       cursor: pointer;
-       transition: transform .3s ease, box-shadow .3s;
-       box-shadow: 0 8px 20px rgba(0,0,0,.2);
+       padding:15px 30px;
+       border:none;
+       border-radius:30px;
+       background:var(--accent);
+       color:#fff;
+       font-weight:700;
+       cursor:pointer;
+       transition:transform .3s ease, box-shadow .3s;
+       box-shadow:0 8px 20px rgba(0,0,0,.2);
     }
     .cta button:hover {
-       transform: translateY(-3px);
-       box-shadow: 0 12px 24px rgba(0,0,0,.25);
+       transform:translateY(-3px);
+       box-shadow:0 12px 24px rgba(0,0,0,.25);
     }
     /* Footer */
     footer {
-       background: var(--dark);
-       color: #aaa;
-       padding: 40px 20px;
-       text-align: center;
-       font-size: 0.9rem;
+       background:var(--dark);
+       color:#aaa;
+       padding:40px 20px;
+       text-align:center;
+       font-size:0.9rem;
     }
     footer a {
-       color: var(--accent);
-       text-decoration: none;
-       margin: 0 10px;
-       font-weight: 600;
+       color:var(--accent);
+       text-decoration:none;
+       margin:0 10px;
+       font-weight:600;
     }
-    @media (max-width: 768px) {
+    @media (max-width:768px) {
        .hero {
-         flex-direction: column;
-         text-align: center;
+         flex-direction:column;
+         text-align:center;
        }
        .hero-content, .hero-image {
-         max-width: none;
+         max-width:none;
        }
        .btn {
-         padding: 12px 24px;
+         padding:12px 24px;
        }
        .hero h1 {
-         font-size: 2rem;
+         font-size:2rem;
        }
     }
   </style>
@@ -371,7 +371,8 @@
     <div class="hero-content">
       <h1>Ready to turn your opinions into rewards?</h1>
       <p>Join a thriving community of survey enthusiasts and access tasks, offers, and games that reward you for sharing your views. Trusted by millions, we make earning simple and fun—no prior experience needed!</p>
-      <a href="https://noklnk.com/x/6018010" target="_blank" class="btn">Get Started Now</a>
+      <!-- Updated CTA tracking link to the latest tracking URL provided by the user -->
+      <a href="https://afflat3d2.com/trk/lnk/D09F93C9-8335-4008-A96C-0B80219B146D/?o=26175&c=918277&a=436831&k=F9748B6D097EFC985422B3193C9D6EB1&l=27558" target="_blank" class="btn">Get Started Now</a>
     </div>
     <div class="hero-image">
       <!-- Use the generated 3D illustration as the hero image -->
@@ -393,7 +394,7 @@
       </div>
       <div class="feature-card">
         <div class="feature-icon">🔒</div>
-        <h3>Secure &amp; Trusted</h3>
+        <h3>Secure & Trusted</h3>
         <p>Your data is protected with SSL encryption and identity verification. Over 11M members trust our platform.</p>
       </div>
     </div>
@@ -449,7 +450,7 @@
           <div class="testimonial-front">
             <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="User photo">
             <div class="stars">★★★★★</div>
-            <p>“Fun tasks &amp; friendly support!”</p>
+            <p>“Fun tasks & friendly support!”</p>
           </div>
           <div class="testimonial-back">
             <p>“The daily streak bonuses motivate me to keep going. The platform is secure and trustworthy.” – Dana P., 22, New York</p>
