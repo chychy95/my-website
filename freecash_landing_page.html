@@ -372,9 +372,18 @@
       <h1>Ready to turn your opinions into rewards?</h1>
       <p>Join a thriving community of survey enthusiasts and access tasks, offers, and games that reward you for sharing your views. Trusted by millions, we make earning simple and fun—no prior experience needed!</p>
       <!-- Updated CTA tracking link to the latest tracking URL provided by the user -->
-      <a href="https://afflat3d2.com/trk/lnk/D09F93C9-8335-4008-A96C-0B80219B146D/?o=26175&c=918277&a=436831&k=F9748B6D097EFC985422B3193C9D6EB1&l=27558" target="_blank" class="btn">Get Started Now</a>
-    </div>
-    <div class="hero-image">
+      <!-- Updated CTA tracking link to the latest tracking URL provided by the user -->
+      <!--
+        The call‑to‑action link below directs visitors to the affiliate offer.  A
+        dynamic SubID (s2) is added via JavaScript so that each click can be
+        tracked individually.  The base URL now includes an empty `s2` parameter
+        which will be populated on page load.
+      -->
+      <a
+        href="https://afflat3d2.com/trk/lnk/D09F93C9-8335-4008-A96C-0B80219B146D/?o=26175&c=918277&a=436831&k=F9748B6D097EFC985422B3193C9D6EB1&l=27558&s2="
+        target="_blank"
+        class="btn"
+      >Get Started Now</a>
       <!-- Use the generated 3D illustration as the hero image -->
       <img src="910d857e-b4a8-4491-882e-1912acb4441d.png" alt="survey illustration">
     </div>
@@ -504,6 +513,27 @@
     counters.forEach(counter => {
       observer.observe(counter);
     });
+  
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // locate the CTA button linking to the affiliate offer
+      const cta = document.querySelector('.hero .btn');
+      if (cta && cta.href.includes('afflat3d2.com')) {
+        const url = new URL(cta.href);
+        const params = new URLSearchParams(url.search);
+        // determine a sub‑ID from the page's query string or fallback
+        const pageParams = new URLSearchParams(window.location.search);
+        let subId = pageParams.get('s2') || pageParams.get('subid') || '';
+        if (!subId) {
+          // generate a unique sub ID using the current timestamp
+          subId = Date.now().toString();
+        }
+        params.set('s2', subId);
+        url.search = params.toString();
+        cta.href = url.toString();
+      }
+    });
   </script>
+</script>
 </body>
 </html>
